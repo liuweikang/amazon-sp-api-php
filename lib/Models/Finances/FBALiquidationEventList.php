@@ -167,8 +167,7 @@ class FBALiquidationEventList implements ModelInterface, ArrayAccess, IterableTy
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

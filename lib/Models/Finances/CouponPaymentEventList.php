@@ -167,8 +167,7 @@ class CouponPaymentEventList implements ModelInterface, ArrayAccess, IterableTyp
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

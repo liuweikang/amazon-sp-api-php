@@ -167,8 +167,7 @@ class SAFETReimbursementItemList implements ModelInterface, ArrayAccess, Iterabl
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

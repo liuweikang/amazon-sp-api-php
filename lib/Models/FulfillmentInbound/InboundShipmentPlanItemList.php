@@ -167,8 +167,7 @@ class InboundShipmentPlanItemList implements ModelInterface, ArrayAccess, Iterab
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

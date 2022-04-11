@@ -166,10 +166,9 @@ class AttributeSetList implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+//         $invalidProperties = parent::listInvalidProperties();
 
-        return $invalidProperties;
+        return [];
     }
 
     /**

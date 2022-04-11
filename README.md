@@ -18,7 +18,7 @@ The purpose of this package is to have an easy way of getting started with the A
 Just require this package via composer:
 
 ```
-composer require clousale/amazon-sp-api-php
+composer require sergo920/amazon-sp-api-php
 ```
 
 # Detailed Documentation
@@ -119,10 +119,6 @@ echo $result->getPayload()->getAttributeSets()[0]->getTitle(); // Never Gonna Gi
 - Improve documentation
 
 Feature Requests & Pull Requests are very welcome!
-
-# Notes
-
-If you are looking for a complete Repricing & FBA-Reimbursement solution, you might want to consider giving [ClouSale.com](https://www.clousale.com) a shot.
 
 # Thanks
 

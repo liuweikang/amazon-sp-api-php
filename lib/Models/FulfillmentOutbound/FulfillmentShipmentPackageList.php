@@ -167,8 +167,7 @@ class FulfillmentShipmentPackageList implements ModelInterface, ArrayAccess, Ite
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

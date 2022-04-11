@@ -76,7 +76,9 @@ class OrderItem implements ModelInterface, ArrayAccess
 'serial_number_required' => 'bool',
 'is_transparency' => 'bool',
 'ioss_number' => 'string',
-'deemed_reseller_category' => 'string',    ];
+'deemed_reseller_category' => 'string', 
+'buyer_requested_cancel'  => 'array',
+ ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -114,7 +116,9 @@ class OrderItem implements ModelInterface, ArrayAccess
 'serial_number_required' => null,
 'is_transparency' => null,
 'ioss_number' => null,
-'deemed_reseller_category' => null,    ];
+'deemed_reseller_category' => null, 
+'buyer_requested_cancel'  => null,
+   ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -173,7 +177,8 @@ class OrderItem implements ModelInterface, ArrayAccess
 'serial_number_required' => 'SerialNumberRequired',
 'is_transparency' => 'IsTransparency',
 'ioss_number' => 'IossNumber',
-'deemed_reseller_category' => 'DeemedResellerCategory',    ];
+'deemed_reseller_category' => 'DeemedResellerCategory', 
+'buyer_requested_cancel'  => 'BuyerRequestedCancel',   ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -211,7 +216,8 @@ class OrderItem implements ModelInterface, ArrayAccess
 'serial_number_required' => 'setSerialNumberRequired',
 'is_transparency' => 'setIsTransparency',
 'ioss_number' => 'setIossNumber',
-'deemed_reseller_category' => 'setDeemedResellerCategory',    ];
+'deemed_reseller_category' => 'setDeemedResellerCategory',
+'buyer_requested_cancel'  => 'setBuyerRequestedCancel',   ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -249,7 +255,8 @@ class OrderItem implements ModelInterface, ArrayAccess
 'serial_number_required' => 'getSerialNumberRequired',
 'is_transparency' => 'getIsTransparency',
 'ioss_number' => 'getIossNumber',
-'deemed_reseller_category' => 'getDeemedResellerCategory',    ];
+'deemed_reseller_category' => 'getDeemedResellerCategory',
+'buyer_requested_cancel'  => 'getBuyerRequestedCancel',   ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -353,6 +360,8 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
         $this->container['is_transparency'] = isset($data['is_transparency']) ? $data['is_transparency'] : null;
         $this->container['ioss_number'] = isset($data['ioss_number']) ? $data['ioss_number'] : null;
         $this->container['deemed_reseller_category'] = isset($data['deemed_reseller_category']) ? $data['deemed_reseller_category'] : null;
+        $this->container['buyer_requested_cancel'] = isset($data['buyer_requested_cancel']) ? $data['buyer_requested_cancel'] : null;
+    
     }
 
     /**
@@ -1126,6 +1135,30 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     }
 
     /**
+     * Sets buyer_requested_cancel.
+     * 
+     * @param array $buyer_requested_cancel
+     * 
+     * @return $this
+     */
+    public function setBuyerRequestedCancel($buyer_requested_cancel)
+    {
+        $this->container['buyer_requested_cancel'] = $buyer_requested_cancel;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_requested_cancel.
+     * 
+     * @return array
+     */
+    public function getBuyerRequestedCancel()
+    {
+        return $this->container['buyer_requested_cancel'];
+    }
+
+    /**
      * Sets deemed_reseller_category.
      *
      * @param string $deemed_reseller_category The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
@@ -1135,9 +1168,9 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     public function setDeemedResellerCategory($deemed_reseller_category)
     {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
-        if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'deemed_reseller_category', must be one of '%s'", implode("', '", $allowedValues)));
-        }
+//         if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
+//             throw new \InvalidArgumentException(sprintf("Invalid value for 'deemed_reseller_category', must be one of '%s'", implode("', '", $allowedValues)));
+//         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 
         return $this;

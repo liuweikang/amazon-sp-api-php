@@ -309,6 +309,19 @@ class ReportDocument implements ModelInterface, ArrayAccess
     {
         return $this->container['compression_algorithm'];
     }
+    
+    /**
+     * decrypt report file.
+     *
+     * @return string
+     */
+    public function decryptFile()
+    {
+        $key = base64_decode($this->getEncryptionDetails()->getKey());
+        $iv = base64_decode($this->getEncryptionDetails()->getInitializationVector());
+        $decryptedData = openssl_decrypt(file_get_contents($this->getUrl()), 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
+        return $decryptedData;
+    }
 
     /**
      * Sets compression_algorithm.

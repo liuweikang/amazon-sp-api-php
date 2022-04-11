@@ -167,8 +167,7 @@ class LabelFormatList implements ModelInterface, ArrayAccess, IterableType
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }

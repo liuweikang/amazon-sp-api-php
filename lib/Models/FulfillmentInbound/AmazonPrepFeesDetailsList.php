@@ -167,8 +167,7 @@ class AmazonPrepFeesDetailsList implements ModelInterface, ArrayAccess, Iterable
      */
     public function listInvalidProperties()
     {
-      // $invalidProperties = parent::listInvalidProperties()
-        $invalidProperties = [];;
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
