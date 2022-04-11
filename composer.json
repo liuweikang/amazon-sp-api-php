@@ -1,0 +1,38 @@
+{
+    "name": "clousale/amazon-sp-api-php",
+    "description": "",
+    "keywords": [
+        "api",
+        "amazon",
+        "selling-partner",
+        "sp-api",
+        "clousale"
+    ],
+    "homepage": "http://www.clousale.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ClouSale",
+            "homepage": "https://www.clousale.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2|^7.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "v2.17.3"
+    },
+    "autoload": {
+        "psr-4": { "ClouSale\\AmazonSellingPartnerAPI\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "ClouSale\\AmazonSellingPartnerAPI\\" : "test/" }
+    }
+}
