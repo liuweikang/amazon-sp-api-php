@@ -167,7 +167,8 @@ class TaxWithheldComponentList implements ModelInterface, ArrayAccess, IterableT
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+      // $invalidProperties = parent::listInvalidProperties()
+        $invalidProperties = [];;
 
         return $invalidProperties;
     }

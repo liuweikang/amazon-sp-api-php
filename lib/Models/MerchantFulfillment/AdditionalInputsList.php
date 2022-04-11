@@ -167,7 +167,8 @@ class AdditionalInputsList implements ModelInterface, ArrayAccess, IterableType
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+      // $invalidProperties = parent::listInvalidProperties()
+        $invalidProperties = [];;
 
         return $invalidProperties;
     }
