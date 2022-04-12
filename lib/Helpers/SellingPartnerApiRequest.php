@@ -19,6 +19,12 @@ use GuzzleHttp\Utils;
  */
 trait SellingPartnerApiRequest
 {
+    private $resourcePath ;
+
+    protected function getResourcePath() {
+        return $this->resourcePath;
+    }
+
     private function generateRequest(
         bool $multipart,
         array $formParams,
@@ -34,6 +40,7 @@ trait SellingPartnerApiRequest
         if (null != $queryParams) {
             ksort($queryParams);
         }
+        $this->resourcePath = $resourcePath;
         // body params
         $_tempBody = $httpBody;
         if ($multipart) {

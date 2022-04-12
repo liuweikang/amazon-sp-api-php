@@ -167,7 +167,8 @@ class PartneredSmallParcelPackageInputList implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        // $invalidProperties = parent::listInvalidProperties()
+        $invalidProperties = [];
 
         return $invalidProperties;
     }

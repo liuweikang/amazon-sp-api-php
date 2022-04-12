@@ -167,7 +167,8 @@ class AdditionalSellerInputsList implements ModelInterface, ArrayAccess, Iterabl
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        // $invalidProperties = parent::listInvalidProperties()
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
