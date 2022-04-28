@@ -80,7 +80,9 @@ class Order implements ModelInterface, ArrayAccess
 'is_estimated_ship_date_set' => 'bool',
 'is_sold_by_ab' => 'bool',
 'assigned_ship_from_location_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address',
-'fulfillment_instruction' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',    ];
+'fulfillment_instruction' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',    
+'buyer_info' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',    
+];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -122,7 +124,9 @@ class Order implements ModelInterface, ArrayAccess
 'is_estimated_ship_date_set' => null,
 'is_sold_by_ab' => null,
 'assigned_ship_from_location_address' => null,
-'fulfillment_instruction' => null,    ];
+'fulfillment_instruction' => null,   
+'buyer_info' => null,   
+];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -185,7 +189,9 @@ class Order implements ModelInterface, ArrayAccess
 'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
 'is_sold_by_ab' => 'IsSoldByAB',
 'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'FulfillmentInstruction',    ];
+'fulfillment_instruction' => 'FulfillmentInstruction',    
+'buyer_info' => 'BuyerInfo',    
+];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -227,7 +233,9 @@ class Order implements ModelInterface, ArrayAccess
 'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
 'is_sold_by_ab' => 'setIsSoldByAb',
 'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'setFulfillmentInstruction',    ];
+'fulfillment_instruction' => 'setFulfillmentInstruction',    
+'buyer_info' => 'setBuyerInfo',    
+];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -269,7 +277,10 @@ class Order implements ModelInterface, ArrayAccess
 'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
 'is_sold_by_ab' => 'getIsSoldByAb',
 'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'getFulfillmentInstruction',    ];
+'fulfillment_instruction' => 'getFulfillmentInstruction',    
+'buyer_info' => 'getBuyerInfo',    
+
+];
 
     /**
      * Array of attributes where the key is the local name,
@@ -439,6 +450,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
         $this->container['is_sold_by_ab'] = isset($data['is_sold_by_ab']) ? $data['is_sold_by_ab'] : null;
         $this->container['assigned_ship_from_location_address'] = isset($data['assigned_ship_from_location_address']) ? $data['assigned_ship_from_location_address'] : null;
         $this->container['fulfillment_instruction'] = isset($data['fulfillment_instruction']) ? $data['fulfillment_instruction'] : null;
+        $this->container['buyer_info'] = isset($data['buyer_info']) ? $data['buyer_info'] : null;
     }
 
     /**
@@ -612,6 +624,11 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     public function getOrderStatus()
     {
         return $this->container['order_status'];
+    }
+    
+    public function getBuyerInfo(){
+        
+        return $this->container['buyer_info'];
     }
 
     /**
@@ -1360,6 +1377,12 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     public function setFulfillmentInstruction($fulfillment_instruction)
     {
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
+
+        return $this;
+    }
+    public function setBuyerInfo($fulfillment_instruction)
+    {
+        $this->container['buyer_info'] = $fulfillment_instruction;
 
         return $this;
     }
