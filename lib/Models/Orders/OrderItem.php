@@ -77,7 +77,7 @@ class OrderItem implements ModelInterface, ArrayAccess
 'is_transparency' => 'bool',
 'ioss_number' => 'string',
 'deemed_reseller_category' => 'string', 
-'buyer_requested_cancel'  => 'array',
+'buyer_requested_cancel'  => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\BuyerRequestedCancel',
  ];
 
     /**
