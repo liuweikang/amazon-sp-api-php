@@ -48,7 +48,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'amazon_order_id' => 'string',
 'financial_event_group_id' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'sku' => 'string',
 'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',    ];
 

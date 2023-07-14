@@ -48,7 +48,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'retrocharge_event_type' => 'string',
 'amazon_order_id' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'base_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
 'shipping_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
 'marketplace_name' => 'string',

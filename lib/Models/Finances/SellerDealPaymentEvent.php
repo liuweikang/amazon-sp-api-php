@@ -46,7 +46,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'deal_id' => 'string',
 'deal_description' => 'string',
 'event_type' => 'string',

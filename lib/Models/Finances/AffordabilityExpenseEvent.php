@@ -47,7 +47,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'amazon_order_id' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'marketplace_id' => 'string',
 'transaction_type' => 'string',
 'base_expense' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',

@@ -46,7 +46,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'enrollment_id' => 'string',
 'parent_asin' => 'string',
 'fee_component' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponent',

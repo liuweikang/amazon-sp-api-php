@@ -47,7 +47,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'transaction_type' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'net_co_transaction_id' => 'string',
 'swap_reason' => 'string',
 'asin' => 'string',

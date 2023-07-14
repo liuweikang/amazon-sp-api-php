@@ -46,7 +46,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'original_removal_order_id' => 'string',
 'liquidation_proceeds_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
 'liquidation_fee_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];

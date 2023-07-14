@@ -51,12 +51,12 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
 'fund_transfer_status' => 'string',
 'original_total' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
 'converted_total' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'fund_transfer_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'fund_transfer_date' => 'string',
 'trace_id' => 'string',
 'account_tail' => 'string',
 'beginning_balance' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'financial_event_group_start' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'financial_event_group_end' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',    ];
+'financial_event_group_start' => 'string',
+'financial_event_group_end' => 'string',    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.

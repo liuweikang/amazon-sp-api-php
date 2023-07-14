@@ -56,7 +56,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
 'order_fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
 'order_fee_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
 'direct_payment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\DirectPaymentList',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'shipment_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',
 'shipment_item_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',    ];
 

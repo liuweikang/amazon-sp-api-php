@@ -46,7 +46,7 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'tds_order_id' => 'string',
 'reimbursed_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
 

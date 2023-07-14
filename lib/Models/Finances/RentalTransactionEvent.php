@@ -49,7 +49,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
         'amazon_order_id' => 'string',
 'rental_event_type' => 'string',
 'extension_length' => 'int',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'rental_charge_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
 'rental_fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
 'marketplace_name' => 'string',

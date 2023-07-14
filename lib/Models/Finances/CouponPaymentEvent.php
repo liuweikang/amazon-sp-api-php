@@ -46,7 +46,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'coupon_id' => 'string',
 'seller_coupon_description' => 'string',
 'clip_or_redemption_count' => 'int',

@@ -47,7 +47,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'seller_order_id' => 'string',
-'transaction_posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'transaction_posted_date' => 'string',
 'business_object_type' => 'string',
 'sales_channel' => 'string',
 'charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent',

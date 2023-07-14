@@ -55,7 +55,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
 'provider_id' => 'string',
 'provider_store_name' => 'string',
 'transaction_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'transaction_creation_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',    ];
+'transaction_creation_date' => 'string',    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.

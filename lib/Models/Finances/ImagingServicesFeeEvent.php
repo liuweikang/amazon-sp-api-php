@@ -48,7 +48,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'imaging_request_billing_item_id' => 'string',
 'asin' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+'posted_date' => 'string',
 'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',    ];
 
     /**

@@ -46,7 +46,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'posted_date' => 'string',
 'transaction_type' => 'string',
 'invoice_id' => 'string',
 'base_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
