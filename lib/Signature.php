@@ -87,14 +87,17 @@ class Signature
             $requestPayload = $data;
         }
 
+        if ($headers) {
+            return $headers;
+        }
         // Hashed payload
         $hashedPayload = hash('sha256', $requestPayload);
 
         //Compute Canonical Headers
-        $canonicalHeaders = array_merge($headers,  [
+        $canonicalHeaders = [
             'host' => $host,
             'user-agent' => $userAgent,
-        ]);
+        ];
 
         // Check and attach access token to request header.
         if (!is_null($accessToken)) {

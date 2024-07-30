@@ -433,9 +433,9 @@ class Configuration
         $this->region = $region;
     }
 
-    public function setHeaders(array $headers)
+    public function setHeaders(array $headres)
     {
-        return $this->$headers;
+        return $this->headres = $headres;
     }
     public function getHeaders(): array
     {
