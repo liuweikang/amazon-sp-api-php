@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration.
  *
@@ -91,6 +92,9 @@ class Configuration
     protected $secretKey;
     /** @var string|null */
     protected $region;
+
+    /** @var array */
+    protected $headres = [];
 
     /**
      * Constructor.
@@ -355,11 +359,11 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report = 'PHP SDK (ClouSale\AmazonSellingPartnerAPI) Debug Report:'.PHP_EOL;
-        $report .= '    OS: '.php_uname().PHP_EOL;
-        $report .= '    PHP Version: '.PHP_VERSION.PHP_EOL;
-        $report .= '    OpenAPI Spec Version: v1'.PHP_EOL;
-        $report .= '    Temp Folder Path: '.self::getDefaultConfiguration()->getTempFolderPath().PHP_EOL;
+        $report = 'PHP SDK (ClouSale\AmazonSellingPartnerAPI) Debug Report:' . PHP_EOL;
+        $report .= '    OS: ' . php_uname() . PHP_EOL;
+        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: v1' . PHP_EOL;
+        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
     }
@@ -383,7 +387,7 @@ class Configuration
         if (null === $prefix) {
             $keyWithPrefix = $apiKey;
         } else {
-            $keyWithPrefix = $prefix.' '.$apiKey;
+            $keyWithPrefix = $prefix . ' ' . $apiKey;
         }
 
         return $keyWithPrefix;
@@ -427,5 +431,14 @@ class Configuration
     public function setRegion(?string $region): void
     {
         $this->region = $region;
+    }
+
+    public function setHeaders(array $headers)
+    {
+        return $this->$headers;
+    }
+    public function getHeaders(): array
+    {
+        return $this->headres;
     }
 }

@@ -50,7 +50,8 @@ class Signature
             $config->getRegion(),
             $config->getAccessToken(),
             $config->getSecurityToken(),
-            $config->getUserAgent()
+            $config->getUserAgent(),
+            $config->getHeaders(),
         );
     }
 
@@ -66,7 +67,8 @@ class Signature
         string $region,
         $accessToken,
         $securityToken,
-        $userAgent
+        $userAgent,
+        $headers
     ): array {
         $terminationString = 'aws4_request';
         $algorithm = 'AWS4-HMAC-SHA256';
@@ -89,10 +91,10 @@ class Signature
         $hashedPayload = hash('sha256', $requestPayload);
 
         //Compute Canonical Headers
-        $canonicalHeaders = [
+        $canonicalHeaders = array_merge($headers,  [
             'host' => $host,
             'user-agent' => $userAgent,
-        ];
+        ]);
 
         // Check and attach access token to request header.
         if (!is_null($accessToken)) {
@@ -106,22 +108,22 @@ class Signature
 
         $canonicalHeadersStr = '';
         foreach ($canonicalHeaders as $h => $v) {
-            $canonicalHeadersStr .= $h.':'.$v."\n";
+            $canonicalHeadersStr .= $h . ':' . $v . "\n";
         }
         $signedHeadersStr = join(';', array_keys($canonicalHeaders));
 
         //Prepare credentials scope
-        $credentialScope = $date.'/'.$region.'/'.$service.'/'.$terminationString;
+        $credentialScope = $date . '/' . $region . '/' . $service . '/' . $terminationString;
 
         //prepare canonical request
-        $canonicalRequest = $method."\n".$uri."\n".$queryString."\n".$canonicalHeadersStr."\n".$signedHeadersStr."\n".$hashedPayload;
+        $canonicalRequest = $method . "\n" . $uri . "\n" . $queryString . "\n" . $canonicalHeadersStr . "\n" . $signedHeadersStr . "\n" . $hashedPayload;
 
         //Prepare the string to sign
-        $stringToSign = $algorithm."\n".$amzdate."\n".$credentialScope."\n".hash('sha256', $canonicalRequest);
+        $stringToSign = $algorithm . "\n" . $amzdate . "\n" . $credentialScope . "\n" . hash('sha256', $canonicalRequest);
 
         //Start signing locker process
         //Reference : https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-        $kSecret = 'AWS4'.$secretKey;
+        $kSecret = 'AWS4' . $secretKey;
         $kDate = hash_hmac('sha256', $date, $kSecret, true);
         $kRegion = hash_hmac('sha256', $region, $kDate, true);
         $kService = hash_hmac('sha256', $service, $kRegion, true);
@@ -131,7 +133,7 @@ class Signature
         $signature = trim(hash_hmac('sha256', $stringToSign, $kSigning));
 
         //Finalize the authorization structure
-        $authorizationHeader = $algorithm." Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
+        $authorizationHeader = $algorithm . " Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
 
         return array_merge($canonicalHeaders, [
             'Authorization' => $authorizationHeader,
