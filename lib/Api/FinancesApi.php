@@ -50,7 +50,7 @@ class FinancesApi
 
     public function __construct(Configuration $config)
     {
-        $this->client = new Client();
+        $this->client = new Client( ['timeout' => 60, 'read_timeout' => 60, 'connect_timeout' => 60]);
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
     }
